@@ -1,0 +1,647 @@
+/* === Root Styling === */
+:root {
+  --sidebar-width: 240px;
+  --content-padding: 2rem;
+  --card-bg: rgba(31, 31, 31, 0.95);
+  --widget-bg: #2c2c2c;
+  --accent-color: #ffc107;
+}
+
+/* === Layout Structure === */
+.dashboard-shell {
+  display: flex;
+  min-height: 100vh;
+  background-color: #242424;
+  font-family: 'Poppins', sans-serif;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.dashboard-sidebar {
+  width: var(--sidebar-width);
+  background-color: #1a1a1a;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: var(--content-padding);
+  overflow-y: auto;
+}
+
+/* === Sidebar Styling === */
+.dashboard-sidebar h2 {
+  font-size: var(--font-subheading);
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.dashboard-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dashboard-sidebar li {
+  margin-bottom: 1.2rem;
+}
+
+.dashboard-sidebar a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  display: block;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dashboard-sidebar a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* === Header & Greeting === */
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-greeting {
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 2rem;
+  animation: slideUp 0.5s ease-in-out;
+}
+
+/* === Profile Card === */
+.profile-card {
+  display: flex;
+  align-items: center;
+  background: var(--card-bg);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-3px);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1.5rem;
+  border: 2px solid #444;
+}
+
+.profile-details {
+  flex: 1;
+}
+
+.username {
+  font-size: 1.6rem;
+  margin: 0;
+  font-weight: 600;
+  color: #fff;
+}
+
+.email,
+.joined {
+  font-size: 0.95rem;
+  color: #aaa;
+  margin-top: 0.3rem;
+}
+
+.edit-btn {
+  background-color: var(--accent-color);
+  color: #000;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 50O0;
+  transition: background-color 0.3s ease;
+  margin-right: 1rem;
+}
+
+.edit-btn:hover {
+  background-color: #ffb300;
+}
+
+/* === Dashboard Content Grid (future-proof) === */
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .dashboard-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* === Optional Widget Cleanup (if reused later) === */
+.widgets-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.widget {
+  background: var(--widget-bg);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  min-width: 200px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.widget:hover {
+  transform: translateY(-3px);
+}
+
+.widget h3 {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.widget p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ccc;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.6s ease-out;
+}
+
+/* User table css */
+
+.user-table-wrapper {
+  margin-top: 3rem;
+  background-color: #1f1f1f;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.table-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #ddd;
+}
+
+.user-table th, .user-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #444;
+  text-align: left;
+}
+
+.user-table th {
+  color: #ccc;
+  background-color: #2a2a2a;
+}
+
+.role-pill {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background-color: #444;
+  color: #fff;
+  display: inline-block;
+}
+
+.role-pill.admin {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.role-pill.user {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.role-pill.manager {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+/* Product Stats css */
+
+.product-stats-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.product-card {
+  background-color: #1f1f1f;
+  padding: 1.2rem 1.6rem;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  width: 260px;
+  min-height: 100px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
+}
+
+.product-icon {
+  font-size: 1.8rem;
+  margin-right: 1rem;
+}
+
+.product-info h4 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  color: #fff;
+}
+
+.product-info p {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ccc;
+}
+
+/* Subtle animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Order Summery */
+
+.order-summary {
+  margin-top: 3rem;
+  background-color: #1f1f1f;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.order-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c2c2c;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.order-card:hover {
+  background-color: #353535;
+}
+
+.order-id {
+  font-weight: 500;
+  color: #ffc107;
+}
+
+.order-details {
+  flex-grow: 1;
+  margin: 0 1rem;
+  color: #ddd;
+}
+
+.order-details p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.order-date {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.order-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Order Summery */
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.order-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.order-btn {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.order-btn:hover {
+  background-color: #444;
+}
+
+/* Dashboard footer CSS */
+
+.dashboard-footer {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid #333;
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* All Order CSS */ 
+
+.user-table-wrapper {
+  margin-top: 3rem;
+  background-color: #1f1f1f;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.user-table th, .user-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #444;
+  text-align: left;
+}
+
+.user-table th {
+  color: #ccc;
+  background-color: #2a2a2a;
+}
+
+
+/* for dropdowns */ 
+
+/* Dropdown styling inside forms */
+.order-form select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: #fff;
+  outline: none;
+  margin-top: 0.3rem;
+  appearance: none;
+}
+
+.order-form select:focus {
+  border: 1px solid #646cff;
+  background-color: #3b3b3b;
+}
+/* red validations errors */
+
+.field-error {
+  color: #f44336;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Add Stock Form */
+
+/* Replace this section */
+.submit-order-btn {
+  padding: 0.9rem 1.5rem;
+  background-color: #646cff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Place both buttons side by side */
+.button-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cancel-order-btn {
+  background-color: #8b0000;
+  color: white;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cancel-order-btn:hover {
+  background-color: #a30000;
+}
+
+/* Order Summery CSS */
+
+.order-list-wrapper {
+  background-color: #1f1f1f;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 12px;
+  max-width: 1000px;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.order-list-wrapper h2 {
+  color: #ffc107;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.order-table th,
+.order-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #333;
+  text-align: center;
+}
+
+.order-table th {
+  background-color: #2a2a2a;
+  color: #ccc;
+  font-weight: 600;
+}
+
+.order-table td {
+  color: #ddd;
+}
+
+.no-orders-text,
+.loading-text {
+  text-align: center;
+  color: #bbb;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* All orders viewing Table cancel button css */ 
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+
+/* for stock adding forms toggling */
+
+/* Toggle Tabs */
+.stock-toggle-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-btn:hover {
+  background-color: #444;
+}
+
+.tab-btn.active {
+  background-color: #646cff;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(100, 108, 255, 0.6);
+}
+
+.clickable {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.clickable:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Product stats detailed */
+
+.filtered-product-wrapper {
+  background-color: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.filtered-product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filtered-product-header h3 {
+  margin: 0;
+  color: #ffc107;
+}
+
+.empty-message {
+  color: #ccc;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem;
+}

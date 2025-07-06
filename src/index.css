@@ -1,0 +1,78 @@
+/* index.css */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  --container-width: 1200px;
+  --page-padding: 1.5rem;
+  --font-base: 1rem;
+  --font-heading: 2rem;
+  --font-subheading: 1.25rem;
+}
+
+/* Reset base spacing and box model */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+p {
+  font-size: var(--font-base);
+  margin-bottom: 1rem;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: none;
+}
+a:hover {
+  color: #747bff;
+}
+
+/* Global Container */
+.container {
+  max-width: var(--container-width);
+  padding: var(--page-padding);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Button style (base) */
+button {
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: var(--font-base);
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+button:hover {
+  border-color: #646cff;
+}
