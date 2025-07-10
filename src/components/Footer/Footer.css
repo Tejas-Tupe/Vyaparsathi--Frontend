@@ -1,47 +1,26 @@
 /* src/components/Footer.css */
+
 .footer {
   background-color: #1a1a1a;
   color: #f2f2f2;
-  padding: 2rem 1rem;
+  padding: 1rem;
   font-size: 0.95rem;
   border-top: 1px solid #333;
+  text-align: center;
 }
 
-.footer-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.footer-brand h3 {
+.footer-tagline {
   margin: 0;
-  font-size: 1.5rem;
-  color: #646cff;
+  font-weight: 400;
+  letter-spacing: 0.3px;
 }
 
-.footer-links {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.footer-links a {
-  color: #ccc;
+.footer-tagline a {
+  color: #4da6ff;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-weight: 500;
 }
 
-.footer-links a:hover {
-  color: #ffffff;
-}
-
-@media (min-width: 640px) {
-  .footer-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+.footer-tagline a:hover {
+  text-decoration: underline;
 }

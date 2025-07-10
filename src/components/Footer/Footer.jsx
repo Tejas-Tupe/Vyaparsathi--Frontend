@@ -5,18 +5,16 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-brand">
-          <h3>Vyaparsathi</h3>
-          <p>© {new Date().getFullYear()} Invyara India Pvt. Ltd. All rights reserved.</p>
-        </div>
-
-        <div className="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Refund Policy</a>
-        </div>
-      </div>
+      <p className="footer-tagline">
+        Designed, developed, and maintained by Tejas Tupe |{' '}
+        <a
+          href="https://www.linkedin.com/in/tejastupe/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+      </p>
     </footer>
   );
 };
